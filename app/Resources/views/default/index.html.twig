@@ -1,0 +1,34 @@
+<h1>
+    
+    Sykes Task - Welcome
+</h1>
+<div class="row"  style="margin-top: 10px; margin-left: 200px; margin-right: 20px">
+    <div class="col-sm-9">
+        <div class="form-group p-b">
+            {{ form_start(form, {'method': 'GET'}) }}
+            {{ form_end(form) }}
+        </div>
+    </div>
+    <h1>Search Results</h1>
+    
+{% if pagination %}
+{# total items count #}
+<div class="count">
+    Total: {{ pagination.getTotalItemCount }}
+</div>
+<table>
+
+
+{# table body #}
+{% for property in pagination %}
+<tr {% if loop.index is odd %}class="color"{% endif %}>
+    <td>{{ property.name }} / {{ property.location.location_name }}</td>
+</tr>
+{% endfor %}
+</table>
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
+{% endif%}
+</div>
