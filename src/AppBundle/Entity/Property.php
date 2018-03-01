@@ -4,9 +4,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity
- * @ORM\Table(name="properties",  indexes={
- *     @ORM\Index(name="fk_location_idx", columns={"_fk_location"})
- * })
+ * @ORM\Table(name="properties")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\Repository\PropertyRepository")
  */
  
